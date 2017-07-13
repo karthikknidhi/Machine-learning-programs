@@ -1,0 +1,113 @@
+Audion two voice seperation = svd((repmat(sum(x.*x,1),size(x,1),1).*x)*x');// also called cocktail party algorithm
+rand(1,3) to randomly generate matrices with random numbers 
+randn(1,3) for gaussian distribution
+hist(w) to draw a histogram hist(w,50) for more bars in a graph
+eye(5) - 5 * 5 identity matrix
+pinv(Matrix) -  to get the inverse of a matrix
+load dataset.dat or load ('dataset.txt') - to load a dataset 
+price(1:10)- first 10 variables in variable price
+who command to see variables in the workspace  
+whos command gives us all thee variables with the size and dimension
+size (featurex) to ge the row and column
+save hello.mat v  - this will save the variable v in the file hello.mat .. this will be in the binary format
+save hello.txt v -ascii  - save as text or human readable format
+A(2,:) - to fetch everything in the second row
+A(:,2) - fetch everything in the second column of A 
+
+positive class = find(y==1);
+negative class = find(y==0);
+
+A(positive class,1) - gives all positive class features from first column
+A(negative class,1) - gives all negative class features from first column
+
+A([1 3] ,:)- get everything from the first row and third row
+pinv(x'*x)*x'*y;
+A(:,2) = [ 10 ;11;12] - assigning or replacing values of the second column
+A = [A ,[1;2;3]] -append a column to the right
+A (:) -put all elements of A in a single column vector
+c = [a b]  horizontal concatenation
+c = [a;b] vertical concatenation
+A*B - multiplication
+A.*B - element wise multiplication
+A.^2 - element wise squaring 
+pwd - current octave path 
+log(v)
+exp(v)
+abs(v) - element wise absolute value
+v + ones(length(v)+1) - adding v by 1  also v + ones(3,1)
+A' - convert 3*2 matrix into 2*3 - transpose of a matrix 
+a = [1,2,3,4] ; [val index] = max(a) - returns the maximum value and the index 
+a < 3 : element wise comparison and return 1 if true and 0 if false
+A = magic(3) - where all the rows columns and diagonals sum up to the same thing 
+[r,c] = find(A>=7) r = 1 3 2 c = 1 2 3 => A(1,1) >7 , A(3,2) >7 and A(2 , 3 )> 7
+prod(a) product of all elements in a 
+floor(a) - rounded down
+ceil(a) - rounded up 
+max(rand(3) , rand(3)) - maximum of two randomly generated matrices
+max(A,[],1) = maximum of column wise 
+max(A,[] ,2) = maximum of row wise 
+max(max(A)) or max((A(:))
+sum(A,1) per column sum 
+sum(A,2) row wise sum
+sum(sum(A.*eye(9))) - diagonal sum of A * eye(9) - regular
+sum(sum(A.*flipud(eye(9)))) - diagonal element flipping 
+pinv(A) - inverse of A
+t = [0:0.01:0.98]
+y1 = sin(2*pi*4*t); plot(t,y1); - for plotting
+hold on - plots new figures on top of the old one = plot(t,y1,'r'); - r stands for color.. plots(t,y2) in red on top of plot(t,y1)
+xlabel('time')
+ylabel('value)
+legend ('a','b') - names the category of each line in the plot  
+cd <path> ; print -dpng 'myplot.png' -> used to save the plot image 
+close - to close the  plot  
+figure(1); plot(t,y1) ;
+figure (2); plot (t,y2); - plot in two figures
+
+subplot(1,2,1) - divides  a plot into 1 * 2 grid
+access the first grid above plot(t,y1) ; 
+subplot(1,2,2) plot (t,y2) - access the second element above
+axis(0.5 1 -1 1] horizontal and vertical scale 
+imagesc(A) - to plot color matrix in a grid shape of each values 
+imagesc(A) , colorbar , colormap grey - a color bar describing values for each color -- this is called comma chaining 
+
+for i = 1 :10,
+ disp v(i)
+end 
+
+also indices = 1 2 3 4 5 4
+for i = indices
+ disp v(i);
+end
+
+
+while i <=5 
+v(i)  = 100;
+i = i+1 ;
+end
+
+i = 1;
+while true,
+v(i) = 90;
+i = i + 1;
+if  i == 6
+ break;   - this breaks out of while loop if i = 6
+end
+end
+
+addpath ('path') - to add a path to the matlab
+
+function x = square(y) - returns one number x
+function[x,y] = squareandcube(z) - returns two numbers x and y : hence [a,b] = squareandcube(z); as long as the function is returning two values
+
+prediction = theta'*x;
+
+for i=1:length(word_indices)
+    x(word_indices(i)) = 1;
+    end
+
+map all the word_indices to the index of x which is filled with zeros
+
+
+
+
+
